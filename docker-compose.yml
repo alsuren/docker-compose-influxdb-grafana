@@ -1,5 +1,15 @@
 version: '2'
 services:
+  mosquitto:
+    image: eclipse-mosquitto
+    hostname: mosquitto
+    container_name: mosquitto
+    expose:
+      - '1883'
+      - '9001'
+    ports:
+      - '1883:1883'
+      - '9001:9001'
   influxdb:
     image: influxdb:latest
     ports:
